@@ -5,6 +5,9 @@ _Mini-Project on Graph Networks and Architectures for the Deep Learning Advanced
 A performer-based architecture and a graph attention network are compared for point cloud classification on the ShapeNet dataset. 
 GradCAM is used to investigate model differences by explaining the most important points for a prediction.
 
+For more information, read the [full project report](./report.pdf). 
+The report contains a short introduction to performers, graph attention networks and GradCAM, as well as experimental details and results.
+
 ## Setup
 Main dependencies:
 - numpy, pandas, matplotlib, seaborn
