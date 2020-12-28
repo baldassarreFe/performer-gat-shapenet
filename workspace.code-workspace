@@ -1,0 +1,73 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.formatting.provider": "black",
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/__pycache__/**": true,
+			"**/data/**": true,
+			"**/*.egg-info/**": true,
+			"**/.ipynb_checkpoints/**": true,
+		},
+		"files.exclude": {
+			"**/.git": true,
+			"**/.DS_Store": true,
+			"**/__pycache__/**": true,
+			"**/*.egg-info/**": true,
+			"**/.ipynb_checkpoints/**": true,
+		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Train quick",
+				"type": "python",
+				"request": "launch",
+				"module": "miniproject",
+				"justMyCode": false,
+				"cwd": "${workspaceFolder}",
+				"args": [
+					"train",
+					"conf/quick.yaml",
+					"other.seed=0",
+					"logging.offline=true"
+				],
+				"env": {
+					"CUDA_VISIBLE_DEVICES": "0,1"
+				}
+			},
+			{
+				"name": "Test",
+				"type": "python",
+				"request": "launch",
+				"module": "miniproject",
+				"justMyCode": false,
+				"cwd": "${workspaceFolder}",
+				"args": [
+					"test",
+					"runs/miniproject/1i0cekl6/checkpoints/last.ckpt",
+				],
+				"env": {
+					"CUDA_VISIBLE_DEVICES": "0,1"
+				}
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Clear runs",
+				"type": "shell",
+				"command": "rm -r runs/miniproject runs/wandb",
+				"problemMatcher": [],
+			}
+		]
+	}
+}

@@ -1,0 +1,23 @@
+trainer:
+  max_epochs: 3
+  fast_dev_run: false 
+
+other:
+  gpus: 2
+
+architecture:
+  model: gat
+  num_layers: 1
+  num_heads: 2
+  hidden_features: 16
+  knearest: 6
+
+logging:
+  offline: true
+  save_dir: ./runs
+  log_every_n_steps: 1
+
+data:
+  data_root: ./data
+  num_workers: 4
+  batch_size: 128
